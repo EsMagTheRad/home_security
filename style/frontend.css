@@ -1,0 +1,55 @@
+/*Styles for tab*/
+body{
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+    text-align: center;
+}
+div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+/*Buttons inside tab*/
+div.tab button {
+    background-color: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/*Change bg-color of buttons on hover*/
+div.tab button:hover {
+    background-color: #ddd;
+}
+/*Create an aktive tablink class*/
+div.tab button.aktive {
+    background-color: #ccc;
+}
+/**style of tab content*/
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+     -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s; 
+    text-align: center;
+}
+table.center {
+    margin-left:auto; 
+    margin-right:auto;
+    background-color: #f1f1f1;
+    text-align: center;
+  }
+@-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
