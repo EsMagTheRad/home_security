@@ -1,4 +1,4 @@
-function openTab(evt, cityName) {
+function openTab(evt, tabname) {
     // Declare all variables
     var i, tabcontent, tablinks;
 
@@ -15,7 +15,7 @@ function openTab(evt, cityName) {
     }
 
     // Show the current tab, and add an "active" class to the button that opened the tab
-    document.getElementById(cityName).style.display = "block";
+    document.getElementById(tabname).style.display = "block";
     evt.currentTarget.className += " active";
 }
 
@@ -27,7 +27,7 @@ function saveSettings()
     var fileNameToSaveAs = document.getElementById("inputFileNameToSaveAs").value;
  
     var downloadLink = document.createElement("a");
-    downloadLink.download = C:\Users\Shion Maggio\Desktop\Webapplikation\home_security\;
+    downloadLink.download = fileNameToSaveAs;
     downloadLink.innerHTML = "Download File";
     downloadLink.href = textToSaveAsURL;
     downloadLink.onclick = destroyClickedElement;
