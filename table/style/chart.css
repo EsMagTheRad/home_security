@@ -1,1 +1,47 @@
-﻿
+body{
+    margin: 10px auto;
+    max-width: 60em; 
+    font-family: "Arial"
+	}
+* {
+    padding: 10px;
+    margin:5px;
+	}
+header{
+    border: 2px solid #3481cd
+	}
+nav{
+    background: skyblue;
+	}
+#navmenu ul {
+    margin: 0; 
+    padding: 0; 
+	list-style-type: none; 
+    list-style-image: none; 
+    }
+#navmenu li {
+    display: inline; 
+    padding: 5px 20px 5px 20px
+    }
+#navmenu a {
+    text-decoration:none; 
+    color: white; 
+    }
+#navmenu a:hover {
+    color: black;
+    }
+a {
+    text-decoration: none;
+    color: black;
+}
+#pwenter {
+    margin: 0 10% 0 10%;
+    background-color:#f1f1f1;
+}
+#block{
+    margin: 20px 10% 20px 10%;
+    padding: 20px 0 20px 0; 
+    text-align: center;
+    background-color: skyblue;
+    border-radius: 10px;
+}
