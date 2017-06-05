@@ -18,18 +18,17 @@ var yAxis = d3.axisLeft(y);
 var yPos = 606;//Change for y positioning of XAxis
 var margin = {left:50,right:0,top:55,bottom:0} //For global margin
 
-
-var svg = d3.select("body").append("svg").attr("height","700").attr("width","100%");
-var chartGroup = svg.append("g").attr("transform","translate("+margin.left+","+margin.top+" )")
-
-
+//Erstellung des Tooltips der beim rüberfaren mit der Maus über Balken angezeigt wird
 var tooltip = d3.select('body').append('div')
                 .style('position', 'absolute')
                 .style('padding','10px 20px')
-                .style('background', 'DarkKhaki')
+                .style('background', 'skyblue')
                 .style('opacity', 0)
                 .style('color', 'white')
                 .style('border-radius', '5px')
+
+var svg = d3.select("body").append("svg").attr("height","700").attr("width","100%");
+var chartGroup = svg.append("g").attr("transform","translate("+margin.left+","+margin.top+" )")
 
 chartGroup.selectAll("rect")
             .data(dataArray)
@@ -39,27 +38,29 @@ chartGroup.selectAll("rect")
                 .attr("fill","pink")//Farbe der Balken
                 .attr("x",function(d,i){ return 40*i; })//Abstand zwischen dern Balken (hier 10 pixel)
                 .attr("y",function(d,i){ return yPos-(d*10); })
-//Mouseoverevents
 
+//Mouseoverevents, Farbänderung der Balken sowie Anzeige der Werte
             .on('mouseover', function(d){
     
                 tooltip.transition()
                     .style('opacity', 1)
-                
                 tooltip.html(d)
                     .style('left', (d3.event.pageX - 10) + 'px')
                     .style('top', (d3.event.pageY - 45) + 'px')
-                oldcolor = this.style.fill;
                 d3.select(this)
                     .style('fill', 'purple')
                     .style('opacity', 0.5)
             })
               .on('mouseout', function(d){
+    
+                tooltip.transition()
+                    .style('opacity', 0)
+                    .delay(500)
                 d3.select(this)
                     .style('fill', 'pink')
                     .style('opacity', 1)
             });
-
+//Fügt dem Balkendiagramm die x und y achse hinzu
 chartGroup.append('g')
         .attr("class","x axis")
         .attr("transform","translate(0, "+ yPos +" )")
